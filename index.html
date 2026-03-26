@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Cam Streams - Top 12 Live Rooms Now Streaming</title>
+  <meta name="description" content="Watch the top 12 live cam streams right now. Browse the hottest live rooms streaming in real time. Click to join any stream instantly." />
+  <meta name="keywords" content="live streams, live cam, live rooms, streaming, watch live, cam streams" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Live Cam Streams - Top 12 Live Rooms Now Streaming" />
+  <meta property="og:description" content="Watch the top 12 live cam streams right now. Browse the hottest live rooms streaming in real time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live Cam Streams - Top 12 Live Rooms" />
+  <meta name="twitter:description" content="Watch the top 12 live cam streams right now." />
+
+  <link rel="canonical" href="https://yourusername.github.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Live Cam Streams",
+    "description": "Top 12 live cam rooms streaming right now",
+    "url": "https://yourusername.github.io/"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --bg2: #161b27;
+      --bg3: #1c2333;
+      --border: #252d3d;
+      --border2: #2a3347;
+      --text: #e8eaf0;
+      --text2: #8892a4;
+      --primary: #e63368;
+      --primary-hover: #c92a59;
+      --card-hover-border: rgba(230,51,104,0.4);
+      --radius: 12px;
+      --font: 'Inter', sans-serif;
+    }
+
+    html { color-scheme: dark; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(22,27,39,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse 1.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .stats-pill {
+      font-size: 12px;
+      color: var(--text2);
+      background: var(--bg3);
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .last-updated {
+      font-size: 12px;
+      color: var(--text2);
+      white-space: nowrap;
+    }
+
+    .refresh-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, opacity 0.15s;
+      font-family: var(--font);
+    }
+
+    .refresh-btn:hover { background: rgba(230,51,104,0.1); }
+    .refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .refresh-icon { width: 15px; height: 15px; flex-shrink: 0; }
+    .refresh-icon.spinning { animation: spin 1s linear infinite; }
+
+    /* Main */
+    main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--text2);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 16px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-3px) scale(1.01);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 0 0 1px rgba(230,51,104,0.2), 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Thumbnail */
+    .thumb-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      background: #0a0d14;
+      overflow: hidden;
+    }
+
+    .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .thumb-wrap img { transform: scale(1.05); }
+
+    .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thumb-placeholder svg { width: 48px; height: 48px; color: #2a3347; fill: currentColor; }
+
+    .badge-live {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #dc2626;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .badge-new {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .viewers-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #dde1ea;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .viewers-badge svg { width: 12px; height: 12px; fill: currentColor; }
+
+    /* Card body */
+    .card-body { padding: 12px 14px; }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-username {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    .gender-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .gender-f { color: #f472b6; background: rgba(244,114,182,0.1); border-color: rgba(244,114,182,0.25); }
+    .gender-m { color: #60a5fa; background: rgba(96,165,250,0.1); border-color: rgba(96,165,250,0.25); }
+    .gender-t { color: #c084fc; background: rgba(192,132,252,0.1); border-color: rgba(192,132,252,0.25); }
+    .gender-c { color: #facc15; background: rgba(250,204,21,0.1); border-color: rgba(250,204,21,0.25); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+      min-height: 20px;
+    }
+
+    .tag {
+      font-size: 11px;
+      color: var(--text2);
+      background: var(--bg3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text2);
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .flag-img {
+      width: 16px;
+      height: 12px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .watch-now {
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .watch-now svg { width: 12px; height: 12px; stroke: currentColor; fill: none; }
+
+    /* Skeleton */
+    .skeleton { animation: shimmer 1.5s infinite; }
+
+    .skel-thumb {
+      aspect-ratio: 4/3;
+      background: var(--bg3);
+    }
+
+    .skel-body { padding: 12px 14px; }
+
+    .skel-line {
+      height: 13px;
+      background: var(--bg3);
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .skel-line.short { width: 45%; }
+    .skel-line.medium { width: 65%; }
+    .skel-line.full { width: 100%; }
+
+    .skel-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    /* Error / Empty */
+    .state-msg {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .state-msg .icon { font-size: 48px; margin-bottom: 16px; }
+    .state-msg p { color: var(--text2); font-size: 15px; margin-bottom: 20px; }
+
+    .retry-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: background 0.15s;
+    }
+
+    .retry-btn:hover { background: var(--primary-hover); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--text2);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    footer a { color: var(--primary); }
+    footer a:hover { text-decoration: underline; }
+
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes shimmer {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 540px) {
+      .last-updated { display: none; }
+      .stats-pill { display: none; }
+      .hero h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="live-dot"></span>
+      <span class="logo-text">LiveCamStreams</span>
+      <span class="stats-pill" id="stats-pill" style="display:none"></span>
+    </div>
+    <div class="header-right">
+      <span class="last-updated" id="last-updated"></span>
+      <button class="refresh-btn" id="refresh-btn" onclick="fetchStreams()">
+        <svg class="refresh-icon" id="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+        Refresh
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h2>Top 12 Live Rooms Right Now</h2>
+    <p>Browse the hottest live cam streams happening right now. Click any room to join instantly.</p>
+  </div>
+
+  <div id="content"></div>
+</main>
+
+<footer>
+  <p>
+    Stream data auto-refreshes every 60 seconds. All links are affiliate links.
+    By clicking, you agree to the
+    <a href="https://chaturbate.com/terms/" target="_blank" rel="noopener noreferrer">Terms of Service</a>.
+  </p>
+</footer>
+
+<script>
+  const API_URL = 'https://chaturbate.com/api/public/affiliates/onlinerooms/?wm=T2CSW&client_ip=request_ip&limit=12&offset=0';
+  const REFRESH_MS = 60000;
+  let refreshTimer = null;
+
+  const genderMap = {
+    f: { label: 'Female', cls: 'gender-f' },
+    m: { label: 'Male',   cls: 'gender-m' },
+    t: { label: 'Trans',  cls: 'gender-t' },
+    c: { label: 'Couple', cls: 'gender-c' },
+  };
+
+  function fmtViewers(n) {
+    return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n);
+  }
+
+  function eyeIcon() {
+    return `<svg viewBox="0 0 24 24"><path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z"/></svg>`;
+  }
+
+  function videoIcon() {
+    return `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>`;
+  }
+
+  function chevronIcon() {
+    return `<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+  }
+
+  function renderCard(room) {
+    const gender = genderMap[room.gender] || { label: room.gender.toUpperCase(), cls: 'gender-f' };
+    const tags = (room.tags || []).slice(0, 3);
+    const imgSrc = room.image_url_360x270 || room.image_url || '';
+    const countryCode = (room.country || '').toLowerCase();
+    const age = room.age ? `Age ${room.age}` : '';
+    const link = room.chat_room_url_revshare || room.chat_room_url || '#';
+
+    const tagHtml = tags.map(t => `<span class="tag">#${t}</span>`).join('');
+    const flagHtml = countryCode
+      ? `<img class="flag-img" src="https://flagcdn.com/16x12/${countryCode}.png" alt="${room.country}" onerror="this.style.display='none'" />`
+      : '';
+    const newBadge = room.is_new ? `<span class="badge-new">NEW</span>` : '';
+
+    return `
+      <article class="card" onclick="window.open('${link}', '_blank', 'noopener,noreferrer')" aria-label="Watch ${room.username} live stream">
+        <div class="thumb-wrap">
+          <img src="${imgSrc}" alt="${room.username} live stream" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <div class="thumb-placeholder" style="display:none">${videoIcon()}</div>
+          <div class="badge-live"><span class="badge-live-dot"></span>LIVE</div>
+          ${newBadge}
+          <div class="viewers-badge">${eyeIcon()} ${fmtViewers(room.num_users)}</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="card-username">${room.username}</span>
+            <span class="gender-badge ${gender.cls}">${gender.label}</span>
+          </div>
+          <div class="tags">${tagHtml}</div>
+          <div class="card-footer">
+            <span class="card-meta">${flagHtml} ${age}</span>
+            <span class="watch-now">Watch Now ${chevronIcon()}</span>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderSkeletons() {
+    return Array.from({ length: 12 }).map(() => `
+      <div class="card skeleton">
+        <div class="skel-thumb"></div>
+        <div class="skel-body">
+          <div class="skel-row">
+            <div class="skel-line medium"></div>
+            <div class="skel-line short"></div>
+          </div>
+          <div class="skel-line full"></div>
+          <div class="skel-row" style="margin-bottom:0">
+            <div class="skel-line short"></div>
+            <div class="skel-line short"></div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function setLoading(on) {
+    const icon = document.getElementById('refresh-icon');
+    const btn = document.getElementById('refresh-btn');
+    if (on) {
+      icon.classList.add('spinning');
+      btn.disabled = true;
+    } else {
+      icon.classList.remove('spinning');
+      btn.disabled = false;
+    }
+  }
+
+  async function fetchStreams() {
+    const content = document.getElementById('content');
+    const isFirst = content.innerHTML === '';
+    if (isFirst) {
+      content.innerHTML = `<div class="grid">${renderSkeletons()}</div>`;
+    }
+    setLoading(true);
+
+    try {
+      const res = await fetch(API_URL);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const rooms = (data.results || []).slice(0, 12);
+
+      if (rooms.length === 0) {
+        content.innerHTML = `
+          <div class="state-msg">
+            <div class="icon">🎥</div>
+            <p>No live rooms found at the moment. Check back soon!</p>
+          </div>`;
+      } else {
+        content.innerHTML = `<div class="grid">${rooms.map(renderCard).join('')}</div>`;
+
+        // Stats pill
+        const total = rooms.reduce((s, r) => s + (r.num_users || 0), 0);
+        const pill = document.getElementById('stats-pill');
+        pill.textContent = `${rooms.length} rooms live • ${total.toLocaleString()} watching`;
+        pill.style.display = '';
+      }
+
+      // Last updated
+      const now = new Date();
+      document.getElementById('last-updated').textContent =
+        `Updated ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+
+    } catch (err) {
+      console.error('Stream fetch error:', err);
+      content.innerHTML = `
+        <div class="state-msg">
+          <div class="icon">📡</div>
+          <p>Unable to load live streams. Please try again shortly.</p>
+          <button class="retry-btn" onclick="fetchStreams()">Try Again</button>
+        </div>`;
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Initial load
+  fetchStreams();
+
+  // Auto-refresh
+  setInterval(fetchStreams, REFRESH_MS);
+</script>
+
+</body>
+</html>
